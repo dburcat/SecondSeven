@@ -23,6 +23,6 @@ All of these are in the cohort's Organization
 
 ### Weekend
 
-- [ ] [Hamurabi - java](https://github.com/ZCW-Winter26/hamurabi)
-- [ ] [Hamurabi - python](https://github.com/ZCW-Winter26/hamurabi-py)
+- [ ] [Hamurabi - java](https://github.com/ZCW-Spring26/hamurabi)
+- [ ] [Hamurabi - python](https://github.com/ZCW-Spring26/hamurabi-py)
 
