@@ -1,0 +1,2 @@
+## This is a message about what a .md file is:
+A .md file or markdown fie is a plain text file formated in a way to display syntax is a simple and readable style that can be also called and displayed by other programs and/or websites. .md files are pure text so while they can contain commands such as print("x=10") it does not actaully mean anything in the .md file as there is no command processing. It is possible to write code in a markdown file but would need to be uploaded or readed by another program and changed from a .md file to another format.
