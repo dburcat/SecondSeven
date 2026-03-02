@@ -1,6 +1,7 @@
 # a simple high low number guessing game.
 #
 import random
+import time
 
 class too_high_too_low:
     def __init__(self):
@@ -14,25 +15,47 @@ class too_high_too_low:
         while True:
             guess_list = []
             guess_counter = 0
+            beginning = True
             while True:
                 pass
-                # Get a number guess from the user (between 1 and 100)
-                if self.guesses == 0:
+                if beginning:
                     print("\033[2J\033[H\nWelcome to the High Low Game! I have selected a number between 1 and 100. Can you guess it?")
+                    beginning = False
                 elif self.guesses > 0 and self.guesses < 10:
                     print(f"Previous guesses: {guess_list}")
-                guess = int(input("Guess a number between 1 and 100: "))
-                # Convert the input to an integer
-                # Increment the number of guesses by 1
+                # Get a number guess from the user (between 1 and 100)
+                guess = input("Guess a number between 1 and 100: ")
+                # Convert the input to an integer and check if it's a valid guess (between 1 and 100)
+                try:
+                    guess = int(guess)
+                except ValueError:
+                    if guess.lower() == "nate":
+                        print("\033[2J\033[H\nKill command executed.")
+                        time.sleep(1)
+                        print("Locking interface.")
+                        time.sleep(1)
+                        print("Nate I know you are watching this.")
+                        time.sleep(2)
+                        print("look behind you for suprise.")
+                        exit()
+                    elif guess.lower() == "exit":
+                        print("\nYou fool there is no leaving.\nYou are trapped here")
+                        time.sleep(5)
+                        print("\33[2J\033[H\nOk, now I'm just bored.\nleave now.")
+                        exit()
+                    
+                    print("\nPlease enter a integer between 1 and 100. And try again.")
+                    continue
                 if guess < 1 or guess > 100:
-                    print("\nPlease enter a number between 1 and 100. And try again.")
+                    print("\nPlease enter a integer between 1 and 100. And try again.")
                     continue
                 if guess in guess_list:
-                    print("\nYou already guessed that number. But I'm being nice and not counting that as a guess")
+                    print("\nYou already guessed that number. \nBut I'm being nice and not counting that as a guess")
                     print(f"You still have {10 - self.guesses} guesses left.")
+                    # Increment the number of guesses by 1
                     guess_counter += 1
                     if guess_counter == 3:
-                        print("\033[2J\033[H\nI guess you just don't want to win. Fine we are ending things here. Goodday and goodbye.")
+                        print("\033[2J\033[H\nI guess you just don't want to win. \nFine, we are ending things here. \nGoodday and goodbye.")
                         exit()
                     continue
                 guess_list.append(guess)
@@ -42,20 +65,26 @@ class too_high_too_low:
                     print(f"\nCongratulations! You guessed the number {self.number} in {self.guesses} guesses.")
                     break
                 # Check *if* the guess is less than the secret number
+                # If so, print "Too low!"
                 if guess < self.number:
                     print(f"\nToo low! You have {10 - self.guesses} guesses left.")
+                # Otherwise (the guess must be too high)
+                # Print "Too high!"
                 else:
                     print(f"\nToo high! You have {10 - self.guesses} guesses left.")
+                
                 if self.guesses == 3:
-                    print("Are you only guessing randomly? Maybe ask ChatGPT for help.")
+                    print("Are you only guessing randomly? \nMaybe ask ChatGPT for help.")
                 if self.guesses == 6:
-                    print("Half way through your guesses. May need to ask ChatGPT for help.")
+                    print("Half way through your guesses. \nMay need to ask ChatGPT for help.")
                 if self.guesses == 9:
-                    print("So cloes or not, did you ask ChatGPT for help yet?")
+                    print("So cloes or not. \nDid you ask ChatGPT for help yet?")
                 # Check *if* the player has made 10 guesses
+                # If so, print a message saying they've run out of guesses and reveal the number
                 if self.guesses >= 10:
                     print(f"\nSorry, you've run out of guesses. The number was {self.number}.")
                     break
+
             status = input("\nDo you want to play again? (y/n): ")
             if status.lower() == 'y':
                 self.__init__()
@@ -63,12 +92,6 @@ class too_high_too_low:
             else:                
                 print("\nThanks for playing! Goodbye.")
                 break
-            # Check *if* the guess is less than the secret number
-            # If so, print "Too low!"
-            # Otherwise (the guess must be too high)
-            # Print "Too high!"
-            # Check *if* the player has made 10 guesses
-            # If so, print a message saying they've run out of guesses and reveal the number
             # Exit the loop
 
 
