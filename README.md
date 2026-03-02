@@ -15,7 +15,7 @@ All of these are in the cohort's Organization
 - [ ] [WordGuess](https://github.com/ZCW-Spring26/WordGuess)
 - [ ] [Payroll](https://github.com/ZCW-Spring26/2nd7Bank)
 - [ ] [MicroBank](https://github.com/ZCW-Spring26/2nd7Bank) (wait?, what? can't clone?)
-- [ ] [DiceyLab](https://github.com/ZCW-Spring6/DiceyLab)
+- [ ] [DiceyLab](https://github.com/ZCW-Spring26/DiceyLab)
 - [ ] [PhoneBook](https://github.com/ZCW-Spring26/PhoneBook)
 
 - [ ] Markdown101 - here in the repo; writing in the _lingua programmica_
